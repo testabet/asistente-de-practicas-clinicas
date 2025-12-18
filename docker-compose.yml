@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # SERVICIO 1:  API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: rag_api_container
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env  # Pasa API Key de Google al contenedor
+    volumes:
+      # Se monta la DB como volumen para no perder datos si se borra el contenedor
+      - ./chroma_db:/app/chroma_db
+
+  # SERVICIO 2:  STREAMLIT 
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: rag_ui_container
+    ports:
+      - "8501:8501"
+    environment:
+      # Le decimos al frontend que la API está en esta direccion
+      - API_URL=http://backend:8000/ask
+    depends_on:
+      - backend  # Espera a que arranque el backend primero

@@ -1,0 +1,13 @@
+chromadb
+fastapi
+langchain_chroma
+langchain_classic
+langchain_community
+langchain_core
+langchain_google_genai
+langchain_text_splitters
+pydantic
+python-dotenv
+Requests
+streamlit
+uvicorn
