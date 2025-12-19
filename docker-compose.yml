@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   # SERVICIO 1:  API
@@ -14,6 +13,7 @@ services:
     volumes:
       # Se monta la DB como volumen para no perder datos si se borra el contenedor
       - ./chroma_db:/app/chroma_db
+    
 
   # SERVICIO 2:  STREAMLIT 
   frontend:

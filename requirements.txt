@@ -11,3 +11,4 @@ python-dotenv
 Requests
 streamlit
 uvicorn
+pymupdf

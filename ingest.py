@@ -14,7 +14,7 @@ if api_key:
 
 
 # Nombre de la carpeta donde se guardará la base de datos (NO borrar esta carpeta después)
-CHROMA_PATH = "./chroma_db_2"
+CHROMA_PATH = "./chroma_db"
 
 paths = ["guia-nacional-practica-clinica-diabetes-mellitius-tipo2_2019.pdf", "salud-guia-practica-clinica-nacional-hta-2024.pdf"]
 etiquetas = ["DIABETES","HTA"]
